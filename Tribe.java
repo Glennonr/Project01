@@ -1,13 +1,10 @@
 package Project01;
-import java.util.Collection;
-import java.util.Collections;
-import java.io.StringBufferInputStream;
+
 import java.util.ArrayList;
-import Project01.People;
-import Project01.PeopleType;
 
 public class Tribe
 {
+    private static final int NUMBER_OF_PEOPLE = 3;
     private String nationName;
     private String tribeName;
     private int tribeLifePoints;
@@ -19,13 +16,13 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < NUMBER_OF_PEOPLE; i++)
             if(i % 3 == 0)
-                members.add(new People(nationName, tribeName, PeopleType.warrior, tribeLifePoints / 2));
+                members.add(new People(nationName, tribeName, PeopleType.warrior, tribeLifePoints / NUMBER_OF_PEOPLE));
             else if(i % 3 == 1)
-                members.add(new People(nationName, tribeName, PeopleType.wizzard, tribeLifePoints / 2));
+                members.add(new People(nationName, tribeName, PeopleType.wizzard, tribeLifePoints / NUMBER_OF_PEOPLE));
             else
-                members.add(new People(nationName, tribeName, PeopleType.healer, tribeLifePoints / 2));
+                members.add(new People(nationName, tribeName, PeopleType.healer, tribeLifePoints / NUMBER_OF_PEOPLE));
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
