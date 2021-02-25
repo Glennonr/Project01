@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args)
     {
-       int NUMBER_OF_NATIONS = 4;
+       int NUMBER_OF_NATIONS = 5;
        int gameLifePoints = 2000;
        ArrayList<Nation> nations = new ArrayList<>() ; // nations create tribes create people
        PlayGame game = new PlayGame();
