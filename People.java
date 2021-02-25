@@ -2,8 +2,7 @@ package Project01;
 
 import Project01.PeopleType;
 
-public class People
-{
+public class People {
     private String personName;
     private String myNation;
     private String myTribe;
@@ -12,8 +11,7 @@ public class People
     private int myLifePoints;
 
 
-    public People(String nation, String tribe, PeopleType person, int lifePoints)
-    {
+    public People(String nation, String tribe, PeopleType person, int lifePoints) {
         myNation = nation;
         myTribe = tribe;
         me = person;
@@ -46,8 +44,7 @@ public class People
         return myLifePoints;
     }
 
-    public void encounterStrategy(People otherPerson)
-    {
+    public void encounterStrategy(People otherPerson) {
         if(myNation == otherPerson.getNation())
         {
             // There will be an ugly confrontation
@@ -56,8 +53,7 @@ public class People
             // Captured opponents do not fight or heal very well. The healers can heal people from same nation
             // normally.
         }
-        else
-        {
+        else {
             // there will be a peaceful confrontation
             // warriors - warrior ignore each other if different tribes increase life points
             // healer - healer ignore each other
@@ -72,8 +68,7 @@ public class People
     }
 
 
-    public String toString()
-    {
+    public String toString() {
         String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
         return result;
     }
