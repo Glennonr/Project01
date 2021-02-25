@@ -1,5 +1,6 @@
 package Project01;
 import Project01.Nation;
+import Project01.People;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;

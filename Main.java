@@ -19,8 +19,9 @@ public class Main {
        PlayGame game = new PlayGame();
 	   nations.add(new Nation("Idiots", gameLifePoints / NUMBER_OF_NATIONS));
 	   nations.add(new Nation("Minions", gameLifePoints / NUMBER_OF_NATIONS));
-	   nations.add(new Nation("Richie's Nation", gameLifePoints /NUMBER_OF_NATIONS));
-	   nations.add(new Nation("Mark's Nation", gameLifePoints /NUMBER_OF_NATIONS));
+	   nations.add(new Nation("Richie's Nation", gameLifePoints / NUMBER_OF_NATIONS));
+	   nations.add(new Nation("Mark's Nation", gameLifePoints / NUMBER_OF_NATIONS));
+	   nations.add(new Nation("Kyle's Nation", gameLifePoints / NUMBER_OF_NATIONS));
 	   // could add and delete nations. return number of nations + 1 from add and number of nations -1 from remove.
 	   for(int i = 0; i < 40; i++)
        {
