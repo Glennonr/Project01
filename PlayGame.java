@@ -12,11 +12,19 @@ public class PlayGame {
     ArrayList<People> worldLivingPopulation = new ArrayList<>();
     Random generator;
 
+    /**
+     * Creates new random number generator for new game
+     */
     public PlayGame() {
         Date seed = new Date();
         generator = new Random(seed.getTime());
     }
 
+    /**
+     * Updates and gets the population of people alive in the game
+     * using the nations they are from
+     * @param nations list of nations that are still in the game
+     */
     public void getWorldLivingPopulation(ArrayList<Nation> nations) {
         // add all living people to world list
         worldLivingPopulation.clear();
@@ -27,7 +35,10 @@ public class PlayGame {
         //System.out.println(worldLivingPopulation);
     }
 
-
+    /**
+     * Gets all nations that have living players in them
+     * @param nations list of nations that are still in the game
+     */
     public void getAllLivingNations(ArrayList<Nation> nations) {
         getWorldLivingPopulation(nations);
         allLivingNations.clear();
@@ -40,7 +51,14 @@ public class PlayGame {
         //System.out.print(allLivingNations);
     }
 
-
+    /**
+     * Gets two players to have an encounter
+     * If players are from the same nation, nothing happens
+     * If players are from different nations, ugly encounter occurs,
+     * where each player takes a random amount of damage from 0-20
+     * @param p1 first player in encounter
+     * @param p2 second player in encounter
+     */
     public void encounter(People p1, People p2) {
         // need to fix this to take strategies into account.
         if(p1.getNation() != p2.getNation()) {
@@ -54,9 +72,12 @@ public class PlayGame {
         }
     }
 
-
-
-
+    /**
+     * Plays through round as long as there are more than one nation still
+     * in game and larger living population than number of encounters in round
+     * @param nations list of nations that are still in the game
+     * @return whether or not the number of living nations is less than 2
+     */
     public Boolean playOneRound(ArrayList<Nation> nations) {
         getAllLivingNations(nations);
         int index = 0;
@@ -77,7 +98,12 @@ public class PlayGame {
         return (allLivingNations.size() < 2);
     }
 
-
+    /**
+     * Gets winner of game, no winner if no nations with living players,
+     * otherwise winning nation is only remaining nation with living
+     * players
+     * @return winning nation
+     */
     public String getWinner() {
         if (allLivingNations.size() == 0)
             return "No Winner!";
