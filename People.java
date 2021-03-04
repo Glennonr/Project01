@@ -11,6 +11,13 @@ public class People {
     private int myLifePoints;
 
 
+    /**
+     * Create a person.
+     * @param nation The Nation the person belongs to.
+     * @param tribe The Tribe the person belongs to.
+     * @param person The type of person (Healer, Warrior, or Soldier).
+     * @param lifePoints The amount of life points for the person.
+     */
     public People(String nation, String tribe, PeopleType person, int lifePoints) {
         myNation = nation;
         myTribe = tribe;
@@ -34,9 +41,13 @@ public class People {
         return myNation;
     }
 
+    /**
+     * Determine if the person's life points is greater than 0.
+     * @return Boolean determining if the person is still alive.
+     */
     public Boolean isPersonAlive()
     {
-        return (myLifePoints > 0);
+        return myLifePoints > 0;
     }
 
     public int getLifePoints()
@@ -44,8 +55,12 @@ public class People {
         return myLifePoints;
     }
 
+    /**
+     * Implement different strategies soon for combat.
+     * @param otherPerson Person in combat.
+     */
     public void encounterStrategy(People otherPerson) {
-        if(myNation == otherPerson.getNation())
+        if(myNation.equals(otherPerson.getNation()))
         {
             // There will be an ugly confrontation
             // Groups attack groups. Group can be an individual or several individuals from any set of tribes
@@ -61,16 +76,14 @@ public class People {
         }
     }
 
-
     public void reduceLifePoints(int points)
     {
-        myLifePoints = myLifePoints - points;
+        myLifePoints -= points;
     }
 
 
     public String toString() {
-        String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
-        return result;
+        return myNation + "\t" + myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints;
     }
 }
 
